@@ -21,7 +21,7 @@ export default function Home() {
         <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
-            <div className="flex items-center gap-2 text-md uppercase tracking-widest text-primary mb-4">
+            <div className="flex items-center gap-2 text-lg uppercase tracking-widest text-white mb-4">
               <FaUser className="text-primary" />
               Anthony Seadler
             </div>
@@ -37,13 +37,13 @@ export default function Home() {
             <div className="flex flex-wrap gap-4">
               <button
                 onClick={handleLaunch}
-                className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-semibold text-sm hover:bg-neutral-200 transition shadow-md shadow-primary"
+                className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-semibold text-sm hover:bg-primary transition"
               >
                 Click for a Random Project
                 <FaDice size={16} />
               </button>
 
-              <button className="inline-flex text-primary items-center gap-2 border border-primary px-6 py-3 rounded-full font-semibold text-sm hover:bg-white hover:text-black transition">
+              <button className="inline-flex  items-center gap-2 border-2 border-primary px-6 py-3 rounded-full font-semibold text-sm hover:bg-primary hover:text-neutral-900 transition">
                 See Tech Stack
               </button>
             </div>

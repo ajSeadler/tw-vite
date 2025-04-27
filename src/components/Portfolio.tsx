@@ -39,7 +39,7 @@ const Portfolio: React.FC = () => {
               <img
                 src={project.imageUrl}
                 alt={project.title}
-                className="object-cover w-full h-full rounded-xl "
+                className="object-cover w-full h-full rounded-xl border-gray-400 border-1"
               />
             </div>
 
@@ -63,7 +63,7 @@ const Portfolio: React.FC = () => {
                 {project.techStack.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="px-4 py-1 text-sm text-neutral-900 bg-primary rounded-full"
+                    className="px-4 py-1 text-sm text-neutral-900 bg-primary rounded-full font-semibold"
                   >
                     {tech}
                   </span>

@@ -101,7 +101,7 @@ const ProfileCard: React.FC = () => {
                 key={label}
                 className="flex items-center p-4 bg-gray-50 rounded-lg shadow-sm"
               >
-                <Icon className="w-8 h-8 text-gray-500" />
+                <Icon className="w-8 h-8 text-primary" />
                 <div className="ml-3">
                   <p className="text-lg font-bold text-gray-900">
                     {value ?? ""}

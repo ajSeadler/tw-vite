@@ -1,93 +1,76 @@
 @import "tailwindcss";
 
-/* 1. All your primaries (400 + 500 steps), including soft pastels */
 @theme {
-  /* default primary = teal-500 */
-  --color-primary: oklch(57% 0.3 173); /* teal-500 */
+  --color-primary: #62d2af; /* default goldenrod */
 
-  /* Teal */
-  --color-primary-teal-400: oklch(70% 0.26 172);
-  --color-primary-teal-500: oklch(57% 0.3 173);
+  /* Warm tones */
+  --color-primary-darkTeal: #62d2af;
+  --color-primary-terraCotta: #d36135;
+  --color-primary-coral: #ff6f61;
+  --color-primary-rust: #b66e41;
+  --color-primary-sunshineYellow: #f2f230;
+  --color-primary-pastelPurple: #a070e8;
 
-  /* Indigo */
-  --color-primary-indigo-400: oklch(72% 0.19 246);
-  --color-primary-indigo-500: oklch(61% 0.22 245);
+  /* Cool tones */
+  --color-primary-teal: #426a5a;
+  --color-primary-seaBlue: #3a7ca5;
+  --color-primary-skyBlue: #00a6d6;
+  --color-primary-emeraldGreen: #2e8b8b;
 
-  /* Red */
-  --color-primary-red-400: oklch(74% 0.28 37);
-  --color-primary-red-500: oklch(63% 0.34 38);
-
-  /* Yellow */
-  --color-primary-yellow-400: oklch(83% 0.53 102);
-  --color-primary-yellow-500: oklch(73% 0.6 101);
-
-  /* Green */
-  --color-primary-green-400: oklch(68% 0.3 140);
-  --color-primary-green-500: oklch(59% 0.39 140);
-
-  /* Purple */
-  --color-primary-purple-400: oklch(64% 0.14 297);
-  --color-primary-purple-500: oklch(48% 0.22 300);
-
-  /* Soft Pastels */
-  /* Pink */
-  --color-primary-pink-400: oklch(93% 0.15 30);
-  --color-primary-pink-500: oklch(90% 0.15 30);
-  /* Lavender */
-  --color-primary-lavender-400: oklch(94% 0.1 290);
-  --color-primary-lavender-500: oklch(91% 0.1 290);
-  /* Mint */
-  --color-primary-mint-400: oklch(93% 0.15 140);
-  --color-primary-mint-500: oklch(90% 0.15 140);
-  /* Peach */
-  --color-primary-peach-400: oklch(95% 0.15 80);
-  --color-primary-peach-500: oklch(92% 0.15 80);
-  /* Sky */
-  --color-primary-sky-400: oklch(92% 0.2 210);
-  --color-primary-sky-500: oklch(89% 0.2 210);
-  /* Lemon */
-  --color-primary-lemon-400: oklch(95% 0.12 100);
-  --color-primary-lemon-500: oklch(93% 0.12 100);
+  /* Neutral and soft tones */
+  --color-primary-slateBlue: #8e9aaf;
+  --color-primary-blushPink: #e7a7c9;
+  --color-primary-lavender: #b68cd9;
+  --color-primary-mossGreen: #7bc8a4;
+  --color-primary-deepPlum: #6d597a;
 }
 
-/* 2. Swap --color-primary at runtime based on data-theme */
 @layer base {
-  [data-theme="teal"] {
-    --color-primary: var(--color-primary-teal-500);
+  [data-theme="goldenrod"] {
+    --color-primary: var(--color-primary-darkTeal);
   }
-  [data-theme="indigo"] {
-    --color-primary: var(--color-primary-indigo-500);
+  [data-theme="terraCotta"] {
+    --color-primary: var(--color-primary-terraCotta);
   }
-  [data-theme="red"] {
-    --color-primary: var(--color-primary-red-500);
+  [data-theme="coral"] {
+    --color-primary: var(--color-primary-coral);
   }
-  [data-theme="yellow"] {
-    --color-primary: var(--color-primary-yellow-500);
+  [data-theme="rust"] {
+    --color-primary: var(--color-primary-rust);
   }
-  [data-theme="green"] {
-    --color-primary: var(--color-primary-green-500);
+  [data-theme="sunshineYellow"] {
+    --color-primary: var(--color-primary-sunshineYellow);
   }
-  [data-theme="purple"] {
-    --color-primary: var(--color-primary-purple-500);
+  [data-theme="pastelPurple"] {
+    --color-primary: var(--color-primary-pastelPurple);
   }
 
-  /* pastel swaps */
-  [data-theme="pink"] {
-    --color-primary: var(--color-primary-pink-500);
+  [data-theme="teal"] {
+    --color-primary: var(--color-primary-teal);
+  }
+  [data-theme="seaBlue"] {
+    --color-primary: var(--color-primary-seaBlue);
+  }
+  [data-theme="skyBlue"] {
+    --color-primary: var(--color-primary-skyBlue);
+  }
+  [data-theme="emeraldGreen"] {
+    --color-primary: var(--color-primary-emeraldGreen);
+  }
+
+  [data-theme="slateBlue"] {
+    --color-primary: var(--color-primary-slateBlue);
+  }
+  [data-theme="blushPink"] {
+    --color-primary: var(--color-primary-blushPink);
   }
   [data-theme="lavender"] {
-    --color-primary: var(--color-primary-lavender-500);
+    --color-primary: var(--color-primary-lavender);
   }
-  [data-theme="mint"] {
-    --color-primary: var(--color-primary-mint-500);
+  [data-theme="mossGreen"] {
+    --color-primary: var(--color-primary-mossGreen);
   }
-  [data-theme="peach"] {
-    --color-primary: var(--color-primary-peach-500);
-  }
-  [data-theme="sky"] {
-    --color-primary: var(--color-primary-sky-500);
-  }
-  [data-theme="lemon"] {
-    --color-primary: var(--color-primary-lemon-500);
+  [data-theme="deepPlum"] {
+    --color-primary: var(--color-primary-deepPlum);
   }
 }

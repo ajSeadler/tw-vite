@@ -1,31 +1,33 @@
-/* src/components/ColorPicker.tsx */
 import { Fragment, useEffect, useState } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { IoIosColorPalette } from "react-icons/io";
 
-/* all your palettes */
-const PALETTES = [
+/* Your 10 modern colors */
+const CUSTOM_PALETTES = [
+  "darkTeal",
+  "terraCotta",
   "teal",
-  "indigo",
-  "red",
-  "yellow",
-  "green",
-  "purple",
-  "pink",
+  "pastelPurple",
+  "slateBlue",
   "lavender",
-  "mint",
-  "peach",
-  "sky",
-  "lemon",
+  "coral",
+  "mossGreen",
+  "seaBlue",
+  "deepPlum",
+  "sunshineYellow",
+  "rust",
+  "skyBlue",
+  "blushPink",
+  "emeraldGreen",
 ] as const;
 
-type Palette = (typeof PALETTES)[number];
+type Palette = (typeof CUSTOM_PALETTES)[number];
 
 export function ColorPicker() {
   const [theme, setTheme] = useState<Palette>(
-    () => (localStorage.getItem("theme") as Palette) || "teal"
+    () => (localStorage.getItem("theme") as Palette) || "mustard"
   );
 
   useEffect(() => {
@@ -35,19 +37,16 @@ export function ColorPicker() {
 
   return (
     <Popover className="relative inline-block text-left">
-      {/* ICON-ONLY TRIGGER */}
       <Popover.Button
         aria-label="Select theme"
-        className="p-2 bg-white dark:bg-neutral-800 rounded-full shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 transition flex items-center justify-center"
+        className="p-2 bg-white dark:bg-neutral-800 rounded-full shadow hover:bg-gray-50 dark:hover:bg-neutral-700 transition flex items-center justify-center"
       >
-        {/* tint the palette icon with your current primary color */}
         <IoIosColorPalette
           className="w-6 h-6"
           style={{ color: "var(--color-primary)" }}
         />
       </Popover.Button>
 
-      {/* DROPDOWN */}
       <Transition
         as={Fragment}
         enter="transition duration-150 ease-out"
@@ -57,22 +56,22 @@ export function ColorPicker() {
         leaveFrom="transform scale-100 opacity-100"
         leaveTo="transform scale-95 opacity-0"
       >
-        <Popover.Panel className="absolute right-0 z-10 mt-2 w-44 bg-white dark:bg-neutral-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg p-3">
-          <div className="grid grid-cols-3 gap-2">
-            {PALETTES.map((p) => (
+        <Popover.Panel className="absolute right-0 z-10 mt-2 w-52 bg-white dark:bg-neutral-800 border  rounded-lg shadow-lg p-4">
+          <div className="grid grid-cols-5 gap-2">
+            {CUSTOM_PALETTES.map((p) => (
               <motion.button
                 key={p}
                 onClick={() => setTheme(p)}
                 whileHover={{ scale: 1.1 }}
-                className={`relative w-6 h-6 rounded-sm shadow-lg ring-1 ring-gray-700 dark:ring-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-primary transition ${
-                  theme === p ? "ring-2 ring-offset-2 ring-primary" : ""
+                className={`relative w-7 h-7 rounded-sm ring-1 ring-inset ring-gray-700 dark:ring-gray-600 focus:outline-none transition ${
+                  theme === p ? "ring-2 ring-primary ring-offset-2" : ""
                 }`}
                 title={`${p.charAt(0).toUpperCase() + p.slice(1)} theme`}
               >
                 <span
                   className="block w-full h-full rounded-sm"
                   style={{
-                    backgroundColor: `var(--color-primary-${p}-500)`,
+                    backgroundColor: `var(--color-primary-${p})`,
                   }}
                 />
                 {theme === p && (

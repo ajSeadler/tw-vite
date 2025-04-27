@@ -1,10 +1,10 @@
-import ErrorPage from "../components/ErrorPage";
+import AboutMe from "../components/AboutMe";
 
 const About = () => {
   return (
     <>
       <div>
-        <ErrorPage />
+        <AboutMe />
       </div>
     </>
   );
