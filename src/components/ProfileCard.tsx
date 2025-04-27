@@ -52,8 +52,8 @@ const ProfileCard: React.FC = () => {
 
   return (
     <div className="bg-neutral-900 min-h-screen antialiased py-16">
-      <div className="container mx-auto px-4">
-        <div className="bg-white relative shadow rounded-lg max-w-lg mx-auto p-6 sm:p-8">
+      <div className="container mx-auto">
+        <div className="bg-white relative shadow rounded-lg  mx-auto p-6 sm:p-8">
           {/* Profile pic & header */}
           <div className="flex justify-center">
             <img
@@ -114,7 +114,9 @@ const ProfileCard: React.FC = () => {
 
           {/* Top languages */}
           <div className="mt-8 px-6">
-            <h3 className="text-gray-900 font-medium mb-4">Top Languages</h3>
+            <h3 className="text-gray-900 font-medium mb-4">
+              Top Languages Used
+            </h3>
             <div className="space-y-3">
               {top5.map(([lang, count]) => {
                 const pct = ((count / totalLangs) * 100).toFixed(0);

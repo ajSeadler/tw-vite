@@ -22,7 +22,7 @@ export default function Navbar() {
             <div className="relative flex h-16 items-center justify-between">
               {/* Mobile menu button */}
               <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-neutral-700 dark:text-neutral-200 hover:bg-neutral-200 dark:hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary">
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-neutral-700 dark:text-neutral-200 hover:bg-neutral-200 dark:hover:bg-neutral-800 ">
                   <span className="sr-only">Open main menu</span>
                   {open ? <XIcon size={24} /> : <MenuIcon size={24} />}
                 </Disclosure.Button>
@@ -30,12 +30,6 @@ export default function Navbar() {
 
               {/* Logo & desktop links */}
               <div className="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
-                <NavLink
-                  to="/"
-                  className="flex items-center text-2xl font-extrabold text-primary"
-                >
-                  ❖
-                </NavLink>
                 <div className="hidden md:ml-6 md:flex md:space-x-8">
                   {navigation.map((item) => (
                     <NavLink

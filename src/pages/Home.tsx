@@ -21,7 +21,7 @@ export default function Home() {
         <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div>
-            <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-primary mb-4">
+            <div className="flex items-center gap-2 text-md uppercase tracking-widest text-primary mb-4">
               <FaUser className="text-primary" />
               Anthony Seadler
             </div>
