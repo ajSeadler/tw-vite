@@ -1,5 +1,3 @@
-import React from "react";
-import { ArrowRight } from "lucide-react";
 import { FaServer, FaCode, FaBolt, FaUser, FaDice } from "react-icons/fa";
 import ProfileCard from "../components/ProfileCard";
 import RecentActivityList from "../components/RecentActivityList";

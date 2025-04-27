@@ -70,7 +70,7 @@ export default function Navbar() {
                   as={NavLink}
                   key={item.name}
                   to={item.to}
-                  className={({ isActive }) =>
+                  className={({ isActive }: { isActive: boolean }) =>
                     `block pl-3 pr-4 py-2 border-l-4 text-base font-medium transition ${
                       isActive
                         ? "bg-primary/10 border-primary text-primary"
