@@ -20,7 +20,6 @@ const navigation = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
-  // add/remove background on scroll
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
@@ -29,7 +28,7 @@ export default function Navbar() {
 
   const bgClass = scrolled
     ? "bg-white/80 dark:bg-neutral-900/80 shadow-lg"
-    : "bg-transparent";
+    : "bg-white dark:bg-neutral-900";
 
   return (
     <Disclosure
@@ -40,7 +39,7 @@ export default function Navbar() {
         <>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 items-center justify-between">
-              {/* Logo + Desktop Links */}
+              {/* Left Side: Logo + Links */}
               <div className="flex items-center space-x-8">
                 {/* <NavLink to="/" className="flex-shrink-0">
                   <TechLogo className="h-8 w-auto" />
@@ -71,10 +70,9 @@ export default function Navbar() {
                 </div>
               </div>
 
-              {/* Right-side Icons */}
-              <div className="flex items-center space-x-4">
+              {/* Right Side: Desktop Icons */}
+              <div className="hidden md:flex items-center space-x-4">
                 <NotificationMenu />
-
                 <ColorPicker />
 
                 {/* Profile Dropdown */}
@@ -105,11 +103,11 @@ export default function Navbar() {
                           {({ active }) => (
                             <NavLink
                               to="/profile"
-                              className={`block px-4 py-2 text-sm text-gray-200 ${
+                              className={`block px-4 py-2 text-sm ${
                                 active
                                   ? "bg-neutral-100 dark:bg-neutral-700"
                                   : ""
-                              }`}
+                              } text-neutral-800 dark:text-neutral-200`}
                             >
                               Profile
                             </NavLink>
@@ -132,49 +130,71 @@ export default function Navbar() {
                     </Menu.Items>
                   </Transition>
                 </Menu>
+              </div>
 
-                {/* Mobile Menu Toggle */}
-                <div className="md:hidden">
-                  <Disclosure.Button className="p-2 rounded-md hover:bg-neutral-200 dark:hover:bg-neutral-800 transition">
-                    {open ? (
-                      <XIcon
-                        size={24}
-                        className="text-neutral-700 dark:text-neutral-300"
-                      />
-                    ) : (
-                      <MenuIcon
-                        size={24}
-                        className="text-neutral-700 dark:text-neutral-300"
-                      />
-                    )}
-                  </Disclosure.Button>
-                </div>
+              {/* Mobile Menu Button */}
+              <div className="flex md:hidden">
+                <Disclosure.Button className="p-2 rounded-md hover:bg-neutral-200 dark:hover:bg-neutral-800 transition">
+                  {open ? (
+                    <XIcon
+                      size={24}
+                      className="text-neutral-700 dark:text-neutral-300"
+                    />
+                  ) : (
+                    <MenuIcon
+                      size={24}
+                      className="text-neutral-700 dark:text-neutral-300"
+                    />
+                  )}
+                </Disclosure.Button>
               </div>
             </div>
           </div>
 
-          {/* Mobile Full-Screen Overlay */}
+          {/* Mobile Menu */}
           <Disclosure.Panel className="md:hidden">
-            <div className="fixed inset-0 bg-neutral-900/80 backdrop-blur-md p-6 space-y-6">
+            <div className=" backdrop-blur-md text-white pl-6 pb-6  z-40 ">
               <div className="flex justify-end">
-                <Disclosure.Button className="p-2 rounded-md hover:bg-neutral-700 transition">
-                  <XIcon size={24} className="text-neutral-100" />
-                </Disclosure.Button>
+                <Disclosure.Button className="p-2 rounded-md hover:bg-neutral-700 transition"></Disclosure.Button>
               </div>
+
               <nav className="space-y-6">
                 {navigation.map((item) => (
                   <Disclosure.Button
                     key={item.name}
                     as={NavLink}
                     to={item.to}
-                    className="block text-white text-2xl font-bold uppercase hover:text-primary transition"
+                    className="block text-2xl font-semibold uppercase hover:text-primary transition"
                   >
                     {item.name}
                   </Disclosure.Button>
                 ))}
               </nav>
-              <div className="pt-6 border-t border-neutral-700 flex flex-col space-y-4">
+
+              {/* Divider */}
+              <div className="border-t border-neutral-700 pt-6 space-y-4">
+                <NotificationMenu />
                 <ColorPicker />
+
+                {/* Profile quick access */}
+                <div className="flex items-center space-x-4 pt-4">
+                  <img
+                    src="/images/me.jpg"
+                    alt="Avatar"
+                    className="h-10 w-10 rounded-full object-cover"
+                  />
+                  <div className="flex flex-col">
+                    <NavLink
+                      to="/profile"
+                      className="text-sm font-medium hover:text-primary"
+                    >
+                      Profile
+                    </NavLink>
+                    <button className="text-sm text-primary hover:underline">
+                      Sign out
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </Disclosure.Panel>

@@ -53,7 +53,7 @@ const ProfileCard: React.FC = () => {
   return (
     <div className="bg-neutral-900 min-h-screen antialiased py-16">
       <div className="container mx-auto">
-        <div className="bg-gray-50 relative shadow rounded-lg  mx-auto p-6 sm:p-8">
+        <div className="relative shadow rounded-lg  mx-auto p-6 sm:p-8">
           {/* Profile pic & header */}
           <div className="flex justify-center">
             <img
@@ -63,7 +63,7 @@ const ProfileCard: React.FC = () => {
             />
           </div>
           <div className="mt-20 text-center">
-            <h1 className="text-2xl font-bold text-gray-900">
+            <h1 className="text-2xl font-bold text-gray-200">
               Anthony Seadler
             </h1>
             <p className="text-sm text-gray-400 mt-1">
@@ -77,7 +77,7 @@ const ProfileCard: React.FC = () => {
               href={githubData?.html_url || "#"}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full block bg-gray-900 text-gray-200 rounded-lg py-3 font-medium hover:bg-primary hover:text-black transition text-center"
+              className="w-full block bg-primary text-gray-800 rounded-lg py-3 font-medium hover:bg-black hover:text-white transition text-center"
             >
               Connect with <span className="font-bold">@ajSeadler</span>
             </a>
@@ -114,7 +114,7 @@ const ProfileCard: React.FC = () => {
 
           {/* Top languages */}
           <div className="mt-8 px-6">
-            <h3 className="text-gray-900 font-medium mb-4">
+            <h3 className="text-gray-200 font-medium mb-4">
               Top Languages Used
             </h3>
             <div className="space-y-3">
@@ -122,14 +122,14 @@ const ProfileCard: React.FC = () => {
                 const pct = ((count / totalLangs) * 100).toFixed(0);
                 return (
                   <div key={lang} className="flex items-center">
-                    <span className="w-20 text-sm text-gray-700">{lang}</span>
+                    <span className="w-20 text-sm text-gray-300">{lang}</span>
                     <div className="flex-1 mx-2 h-2 bg-gray-200 rounded-full overflow-hidden">
                       <div
-                        className="h-full bg-neutral-900"
+                        className="h-full bg-gray-500"
                         style={{ width: `${pct}%` }}
                       />
                     </div>
-                    <span className="w-8 text-xs text-gray-500">{pct}%</span>
+                    <span className="w-8 text-xs text-primary">{pct}%</span>
                   </div>
                 );
               })}
