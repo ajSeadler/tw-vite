@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { Disclosure } from "@headlessui/react";
 import { Menu as MenuIcon, X as XIcon } from "lucide-react";
 import { ColorPicker } from "../components/ColorPicker";
+import TechLogo from "./TechLogo";
 
 const navigation = [
   { name: "Home", to: "/" },
@@ -30,13 +31,16 @@ export default function Navbar() {
 
               {/* Logo & desktop links */}
               <div className="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
+                <NavLink to={"/"} className="flex items-center">
+                  <TechLogo />
+                </NavLink>
                 <div className="hidden md:ml-6 md:flex md:space-x-8">
                   {navigation.map((item) => (
                     <NavLink
                       key={item.name}
                       to={item.to}
                       className={({ isActive }) =>
-                        `inline-flex items-center px-1 pt-1 border-b-2 text-base font-medium transition ${
+                        `inline-flex items-center px-1 pt-1 border-b-2 transition text-sm ${
                           isActive
                             ? "border-primary text-primary"
                             : "border-transparent text-neutral-700 dark:text-neutral-300 hover:border-gray-300"

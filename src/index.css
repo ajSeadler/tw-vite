@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #62d2af; /* default goldenrod */
+  --color-primary: #48a285; /* default goldenrod */
 
   /* Warm tones */
   --color-primary-darkTeal: #62d2af;
   --color-primary-terraCotta: #d36135;
   --color-primary-coral: #ff6f61;
   --color-primary-rust: #b66e41;
-  --color-primary-sunshineYellow: #f2f230;
+  --color-primary-sunshineYellow: #dede10;
   --color-primary-pastelPurple: #a070e8;
 
   /* Cool tones */
