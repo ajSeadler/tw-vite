@@ -80,6 +80,27 @@ export default function Navbar() {
                 </Disclosure.Button>
               ))}
             </div>
+
+            {/* Elegant footer for mobile navbar */}
+            <div className="pt-4 pb-4 border-t border-neutral-300 dark:border-neutral-700">
+              <div className="flex justify-center text-neutral-600 dark:text-neutral-400 text-sm">
+                <span>&copy; {new Date().getFullYear()} Anthony Seadler</span>
+              </div>
+              <div className="flex justify-center space-x-4 mt-2">
+                {/* <NavLink
+                  to="/privacy-policy"
+                  className="text-neutral-600 dark:text-neutral-400 hover:text-primary"
+                >
+                  Privacy Policy
+                </NavLink>
+                <NavLink
+                  to="/terms-of-service"
+                  className="text-neutral-600 dark:text-neutral-400 hover:text-primary"
+                >
+                  Terms of Service
+                </NavLink> */}
+              </div>
+            </div>
           </Disclosure.Panel>
         </>
       )}

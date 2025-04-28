@@ -25,10 +25,10 @@ export default function Home() {
               <FaUser className="text-primary" />
               Anthony Seadler
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-5xl font-bold leading-tight mb-6">
               Full-Stack Web Developer.
             </h1>
-            <p className="text-neutral-400 text-base sm:text-lg mb-8">
+            <p className="text-neutral-400 text-ms mb-8">
               I build full-stack applications with React, Node.js, Express,
               PostgreSQL, and modern tools like Vite, Tailwind, and TypeScript.
               I focus on creating optimized, responsive, and secure web

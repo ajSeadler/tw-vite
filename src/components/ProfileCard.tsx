@@ -53,7 +53,7 @@ const ProfileCard: React.FC = () => {
   return (
     <div className="bg-neutral-900 min-h-screen antialiased py-16">
       <div className="container mx-auto">
-        <div className="bg-white relative shadow rounded-lg  mx-auto p-6 sm:p-8">
+        <div className="bg-gray-50 relative shadow rounded-lg  mx-auto p-6 sm:p-8">
           {/* Profile pic & header */}
           <div className="flex justify-center">
             <img
@@ -99,7 +99,7 @@ const ProfileCard: React.FC = () => {
             ].map(({ Icon, label, value }) => (
               <div
                 key={label}
-                className="flex items-center p-4 bg-gray-50 rounded-lg shadow-sm"
+                className="flex items-center p-4 bg-gray-100 rounded-lg shadow-sm"
               >
                 <Icon className="w-8 h-8 text-primary" />
                 <div className="ml-3">

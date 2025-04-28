@@ -96,8 +96,8 @@ const AboutPage: React.FC = () => (
               key={name}
               className="group flex flex-col items-center border border-gray-700 rounded-2xl p-6 hover:border-primary transition"
             >
-              <Icon className="h-12 w-12 mb-4 text-gray-400 group-hover:text-primary transition" />
-              <span className="text-lg font-medium text-gray-300 group-hover:text-white transition">
+              <Icon className="h-10 w-10 mb-4 text-gray-400 group-hover:text-primary transition" />
+              <span className="text-md font-medium text-gray-300 group-hover:text-white transition">
                 {name}
               </span>
             </div>
