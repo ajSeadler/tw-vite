@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { Disclosure } from "@headlessui/react";
 import { Menu as MenuIcon, X as XIcon } from "lucide-react";
 import { ColorPicker } from "../components/ColorPicker";
-import TechLogo from "./TechLogo";
+// import TechLogo from "./TechLogo";
 
 const navigation = [
   { name: "Home", to: "/" },
@@ -31,9 +31,9 @@ export default function Navbar() {
 
               {/* Logo & desktop links */}
               <div className="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
-                <NavLink to={"/"} className="flex items-center">
+                {/* <NavLink to={"/"} className="flex items-center">
                   <TechLogo />
-                </NavLink>
+                </NavLink> */}
                 <div className="hidden md:ml-6 md:flex md:space-x-8">
                   {navigation.map((item) => (
                     <NavLink
